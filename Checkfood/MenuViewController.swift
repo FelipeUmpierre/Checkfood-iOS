@@ -20,25 +20,9 @@ class MenuViewControlvar: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        LoadingOverlay.shared.showOverlay(self.navigationController?.view)
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadTableViewData", name: NotificationsKey.NotificationsMenuKey, object: nil)
-
-        /*Alamofire.request(.GET, Urls.menu).responseJSON { request in
-            if let json = request.result.value {
-                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
-                    let data = JSON(json)
-                    var product: [Product] = []
-                    
-                    for (_, subJson): (String, JSON) in data {
-                        product += [Product(id: subJson["id"].int!, name: subJson["name"].string!, description: subJson["description"].string!, price: subJson["price"].doubleValue)]
-                    }
-                    
-                    dispatch_async(dispatch_get_main_queue()) {
-                        self.products += product
-                        self.tableView.reloadData()
-                    }
-                }
-            }
-        }*/
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,9 +49,13 @@ class MenuViewControlvar: UITableViewController {
         return cell
     }
     
+    // MARK: - Reload Table View
+    
     func reloadTableViewData() {
-        print("fui chamado")
+        self.products = menu.getProducts()!
         self.tableView.reloadData()
+        
+        LoadingOverlay.shared.hideOverlayView()
     }
     
     // MARK: - Navigation
