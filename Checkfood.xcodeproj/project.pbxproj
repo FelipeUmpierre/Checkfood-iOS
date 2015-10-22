@@ -1,0 +1,639 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BF43E3141BD069EC00C17387 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF43E3131BD069EC00C17387 /* AppDelegate.swift */; };
+		BF43E3191BD069EC00C17387 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF43E3171BD069EC00C17387 /* Main.storyboard */; };
+		BF43E31B1BD069EC00C17387 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF43E31A1BD069EC00C17387 /* Assets.xcassets */; };
+		BF43E31E1BD069EC00C17387 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF43E31C1BD069EC00C17387 /* LaunchScreen.storyboard */; };
+		BF43E3291BD069EC00C17387 /* CheckfoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF43E3281BD069EC00C17387 /* CheckfoodTests.swift */; };
+		BF43E3341BD069EC00C17387 /* CheckfoodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF43E3331BD069EC00C17387 /* CheckfoodUITests.swift */; };
+		BF690DB81BD5AEAC008A79C4 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF690DB71BD5AEAC008A79C4 /* Ingredient.swift */; settings = {ASSET_TAGS = (); }; };
+		BFA74DD41BD4451D000DF3EE /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA74DD31BD4451D000DF3EE /* DetailsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		BFD390CA1BD70F90002903C9 /* ObservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD390C91BD70F90002903C9 /* ObservationViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		BFD390CC1BD72491002903C9 /* CartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD390CB1BD72491002903C9 /* CartTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		BFFF1D641BD092F900B3A2C1 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFF1D631BD092F900B3A2C1 /* Product.swift */; settings = {ASSET_TAGS = (); }; };
+		BFFF1D671BD0954E00B3A2C1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFF1D661BD0954E00B3A2C1 /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
+		BFFF1D6B1BD1E0DE00B3A2C1 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFF1D6A1BD1E0DE00B3A2C1 /* MenuViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		BFFF1D6D1BD2E50500B3A2C1 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFF1D6C1BD2E50500B3A2C1 /* Menu.swift */; settings = {ASSET_TAGS = (); }; };
+		C092FCD0D02DBBD4EABFB610 /* Pods_Checkfood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4434CEC417D53C56AAA96C94 /* Pods_Checkfood.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BF43E3251BD069EC00C17387 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF43E3081BD069EC00C17387 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF43E30F1BD069EC00C17387;
+			remoteInfo = Checkfood;
+		};
+		BF43E3301BD069EC00C17387 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF43E3081BD069EC00C17387 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF43E30F1BD069EC00C17387;
+			remoteInfo = Checkfood;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4434CEC417D53C56AAA96C94 /* Pods_Checkfood.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Checkfood.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		622B03B8FB73A5C6313F597B /* Pods-Checkfood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Checkfood.release.xcconfig"; path = "Pods/Target Support Files/Pods-Checkfood/Pods-Checkfood.release.xcconfig"; sourceTree = "<group>"; };
+		B83AB1DC167748F3636A24B3 /* Pods-Checkfood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Checkfood.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Checkfood/Pods-Checkfood.debug.xcconfig"; sourceTree = "<group>"; };
+		BF43E3101BD069EC00C17387 /* Checkfood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checkfood.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF43E3131BD069EC00C17387 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BF43E3181BD069EC00C17387 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BF43E31A1BD069EC00C17387 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BF43E31D1BD069EC00C17387 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BF43E31F1BD069EC00C17387 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF43E3241BD069EC00C17387 /* CheckfoodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheckfoodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF43E3281BD069EC00C17387 /* CheckfoodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckfoodTests.swift; sourceTree = "<group>"; };
+		BF43E32A1BD069EC00C17387 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF43E32F1BD069EC00C17387 /* CheckfoodUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheckfoodUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF43E3331BD069EC00C17387 /* CheckfoodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckfoodUITests.swift; sourceTree = "<group>"; };
+		BF43E3351BD069EC00C17387 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF690DB71BD5AEAC008A79C4 /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		BFA74DD31BD4451D000DF3EE /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		BFD390C91BD70F90002903C9 /* ObservationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservationViewController.swift; sourceTree = "<group>"; };
+		BFD390CB1BD72491002903C9 /* CartTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartTableViewController.swift; sourceTree = "<group>"; };
+		BFFF1D631BD092F900B3A2C1 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		BFFF1D661BD0954E00B3A2C1 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BFFF1D6A1BD1E0DE00B3A2C1 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		BFFF1D6C1BD2E50500B3A2C1 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BF43E30D1BD069EC00C17387 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C092FCD0D02DBBD4EABFB610 /* Pods_Checkfood.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF43E3211BD069EC00C17387 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF43E32C1BD069EC00C17387 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7BDBAB1FD846E334BA6CF764 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4434CEC417D53C56AAA96C94 /* Pods_Checkfood.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF324DC21BD3E5DE0038FD43 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				BF43E3131BD069EC00C17387 /* AppDelegate.swift */,
+				BF43E31F1BD069EC00C17387 /* Info.plist */,
+				BF43E31C1BD069EC00C17387 /* LaunchScreen.storyboard */,
+				BF43E31A1BD069EC00C17387 /* Assets.xcassets */,
+			);
+			name = "Support Files";
+			sourceTree = "<group>";
+		};
+		BF43E3071BD069EC00C17387 = {
+			isa = PBXGroup;
+			children = (
+				BF43E3121BD069EC00C17387 /* Checkfood */,
+				BF43E3271BD069EC00C17387 /* CheckfoodTests */,
+				BF43E3321BD069EC00C17387 /* CheckfoodUITests */,
+				BF43E3111BD069EC00C17387 /* Products */,
+				EFC92D05527971939902E6AA /* Pods */,
+				7BDBAB1FD846E334BA6CF764 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BF43E3111BD069EC00C17387 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BF43E3101BD069EC00C17387 /* Checkfood.app */,
+				BF43E3241BD069EC00C17387 /* CheckfoodTests.xctest */,
+				BF43E32F1BD069EC00C17387 /* CheckfoodUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BF43E3121BD069EC00C17387 /* Checkfood */ = {
+			isa = PBXGroup;
+			children = (
+				BF324DC21BD3E5DE0038FD43 /* Support Files */,
+				BFFF1D651BD0953C00B3A2C1 /* Helpers */,
+				BF43E3411BD06C6300C17387 /* Model */,
+				BF43E3171BD069EC00C17387 /* Main.storyboard */,
+				BFFF1D6A1BD1E0DE00B3A2C1 /* MenuViewController.swift */,
+				BFA74DD31BD4451D000DF3EE /* DetailsViewController.swift */,
+				BFD390C91BD70F90002903C9 /* ObservationViewController.swift */,
+				BFD390CB1BD72491002903C9 /* CartTableViewController.swift */,
+			);
+			path = Checkfood;
+			sourceTree = "<group>";
+		};
+		BF43E3271BD069EC00C17387 /* CheckfoodTests */ = {
+			isa = PBXGroup;
+			children = (
+				BF43E3281BD069EC00C17387 /* CheckfoodTests.swift */,
+				BF43E32A1BD069EC00C17387 /* Info.plist */,
+			);
+			path = CheckfoodTests;
+			sourceTree = "<group>";
+		};
+		BF43E3321BD069EC00C17387 /* CheckfoodUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BF43E3331BD069EC00C17387 /* CheckfoodUITests.swift */,
+				BF43E3351BD069EC00C17387 /* Info.plist */,
+			);
+			path = CheckfoodUITests;
+			sourceTree = "<group>";
+		};
+		BF43E3411BD06C6300C17387 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BFFF1D631BD092F900B3A2C1 /* Product.swift */,
+				BFFF1D6C1BD2E50500B3A2C1 /* Menu.swift */,
+				BF690DB71BD5AEAC008A79C4 /* Ingredient.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		BFFF1D651BD0953C00B3A2C1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BFFF1D661BD0954E00B3A2C1 /* Constants.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		EFC92D05527971939902E6AA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B83AB1DC167748F3636A24B3 /* Pods-Checkfood.debug.xcconfig */,
+				622B03B8FB73A5C6313F597B /* Pods-Checkfood.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BF43E30F1BD069EC00C17387 /* Checkfood */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF43E3381BD069EC00C17387 /* Build configuration list for PBXNativeTarget "Checkfood" */;
+			buildPhases = (
+				D89C36B20865E2DA11358F84 /* Check Pods Manifest.lock */,
+				BF43E30C1BD069EC00C17387 /* Sources */,
+				BF43E30D1BD069EC00C17387 /* Frameworks */,
+				BF43E30E1BD069EC00C17387 /* Resources */,
+				FEA7409F971EEBF3B4DE340E /* Embed Pods Frameworks */,
+				525E661DD566047FEDE1408A /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Checkfood;
+			productName = Checkfood;
+			productReference = BF43E3101BD069EC00C17387 /* Checkfood.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BF43E3231BD069EC00C17387 /* CheckfoodTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF43E33B1BD069EC00C17387 /* Build configuration list for PBXNativeTarget "CheckfoodTests" */;
+			buildPhases = (
+				BF43E3201BD069EC00C17387 /* Sources */,
+				BF43E3211BD069EC00C17387 /* Frameworks */,
+				BF43E3221BD069EC00C17387 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF43E3261BD069EC00C17387 /* PBXTargetDependency */,
+			);
+			name = CheckfoodTests;
+			productName = CheckfoodTests;
+			productReference = BF43E3241BD069EC00C17387 /* CheckfoodTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BF43E32E1BD069EC00C17387 /* CheckfoodUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF43E33E1BD069EC00C17387 /* Build configuration list for PBXNativeTarget "CheckfoodUITests" */;
+			buildPhases = (
+				BF43E32B1BD069EC00C17387 /* Sources */,
+				BF43E32C1BD069EC00C17387 /* Frameworks */,
+				BF43E32D1BD069EC00C17387 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BF43E3311BD069EC00C17387 /* PBXTargetDependency */,
+			);
+			name = CheckfoodUITests;
+			productName = CheckfoodUITests;
+			productReference = BF43E32F1BD069EC00C17387 /* CheckfoodUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BF43E3081BD069EC00C17387 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Felipe Umpierre";
+				TargetAttributes = {
+					BF43E30F1BD069EC00C17387 = {
+						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = YNBW4X8375;
+					};
+					BF43E3231BD069EC00C17387 = {
+						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = YNBW4X8375;
+						TestTargetID = BF43E30F1BD069EC00C17387;
+					};
+					BF43E32E1BD069EC00C17387 = {
+						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = YNBW4X8375;
+						TestTargetID = BF43E30F1BD069EC00C17387;
+					};
+				};
+			};
+			buildConfigurationList = BF43E30B1BD069EC00C17387 /* Build configuration list for PBXProject "Checkfood" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BF43E3071BD069EC00C17387;
+			productRefGroup = BF43E3111BD069EC00C17387 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BF43E30F1BD069EC00C17387 /* Checkfood */,
+				BF43E3231BD069EC00C17387 /* CheckfoodTests */,
+				BF43E32E1BD069EC00C17387 /* CheckfoodUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BF43E30E1BD069EC00C17387 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF43E31E1BD069EC00C17387 /* LaunchScreen.storyboard in Resources */,
+				BF43E31B1BD069EC00C17387 /* Assets.xcassets in Resources */,
+				BF43E3191BD069EC00C17387 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF43E3221BD069EC00C17387 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF43E32D1BD069EC00C17387 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		525E661DD566047FEDE1408A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Checkfood/Pods-Checkfood-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D89C36B20865E2DA11358F84 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FEA7409F971EEBF3B4DE340E /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Checkfood/Pods-Checkfood-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BF43E30C1BD069EC00C17387 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF690DB81BD5AEAC008A79C4 /* Ingredient.swift in Sources */,
+				BFFF1D6D1BD2E50500B3A2C1 /* Menu.swift in Sources */,
+				BFFF1D641BD092F900B3A2C1 /* Product.swift in Sources */,
+				BFFF1D6B1BD1E0DE00B3A2C1 /* MenuViewController.swift in Sources */,
+				BF43E3141BD069EC00C17387 /* AppDelegate.swift in Sources */,
+				BFD390CA1BD70F90002903C9 /* ObservationViewController.swift in Sources */,
+				BFFF1D671BD0954E00B3A2C1 /* Constants.swift in Sources */,
+				BFD390CC1BD72491002903C9 /* CartTableViewController.swift in Sources */,
+				BFA74DD41BD4451D000DF3EE /* DetailsViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF43E3201BD069EC00C17387 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF43E3291BD069EC00C17387 /* CheckfoodTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BF43E32B1BD069EC00C17387 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF43E3341BD069EC00C17387 /* CheckfoodUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BF43E3261BD069EC00C17387 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF43E30F1BD069EC00C17387 /* Checkfood */;
+			targetProxy = BF43E3251BD069EC00C17387 /* PBXContainerItemProxy */;
+		};
+		BF43E3311BD069EC00C17387 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BF43E30F1BD069EC00C17387 /* Checkfood */;
+			targetProxy = BF43E3301BD069EC00C17387 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BF43E3171BD069EC00C17387 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF43E3181BD069EC00C17387 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BF43E31C1BD069EC00C17387 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BF43E31D1BD069EC00C17387 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BF43E3361BD069EC00C17387 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BF43E3371BD069EC00C17387 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BF43E3391BD069EC00C17387 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B83AB1DC167748F3636A24B3 /* Pods-Checkfood.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Checkfood/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = felipeumpierre.Checkfood;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		BF43E33A1BD069EC00C17387 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 622B03B8FB73A5C6313F597B /* Pods-Checkfood.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Checkfood/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = felipeumpierre.Checkfood;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		BF43E33C1BD069EC00C17387 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CheckfoodTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = felipeumpierre.CheckfoodTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Checkfood.app/Checkfood";
+			};
+			name = Debug;
+		};
+		BF43E33D1BD069EC00C17387 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CheckfoodTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = felipeumpierre.CheckfoodTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Checkfood.app/Checkfood";
+			};
+			name = Release;
+		};
+		BF43E33F1BD069EC00C17387 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CheckfoodUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = felipeumpierre.CheckfoodUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Checkfood;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		BF43E3401BD069EC00C17387 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CheckfoodUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = felipeumpierre.CheckfoodUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Checkfood;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BF43E30B1BD069EC00C17387 /* Build configuration list for PBXProject "Checkfood" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF43E3361BD069EC00C17387 /* Debug */,
+				BF43E3371BD069EC00C17387 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF43E3381BD069EC00C17387 /* Build configuration list for PBXNativeTarget "Checkfood" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF43E3391BD069EC00C17387 /* Debug */,
+				BF43E33A1BD069EC00C17387 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF43E33B1BD069EC00C17387 /* Build configuration list for PBXNativeTarget "CheckfoodTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF43E33C1BD069EC00C17387 /* Debug */,
+				BF43E33D1BD069EC00C17387 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BF43E33E1BD069EC00C17387 /* Build configuration list for PBXNativeTarget "CheckfoodUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF43E33F1BD069EC00C17387 /* Debug */,
+				BF43E3401BD069EC00C17387 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BF43E3081BD069EC00C17387 /* Project object */;
+}
