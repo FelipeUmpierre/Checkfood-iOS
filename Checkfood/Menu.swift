@@ -26,28 +26,15 @@ class Menu {
                     
                     dispatch_async(dispatch_get_main_queue()) {
                         self.products += product
-                        print(self.products)
                         
-                        NSNotificationCenter.defaultCenter().addObserver(self, selector: "done", name: NotificationsKey.NotificationsMenuKey, object: nil)
+                        NSNotificationCenter.defaultCenter().postNotificationName(NotificationsKey.NotificationsMenuKey, object: nil)
                     }
                 }
             }
         }
     }
     
-    func totalOfProducts() -> Int {
-        return self.products.count
-    }
-    
     func getProducts() -> [Product]? {
         return self.products
-    }
-    
-    func getProductFromIndex(index: Int) -> Product {
-        return self.products[index]
-    }
-    
-    func done() {
-        print("aqui no menu model foi")
     }
 }
