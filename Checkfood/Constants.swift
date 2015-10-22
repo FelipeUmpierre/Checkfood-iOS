@@ -27,4 +27,5 @@ struct CellReuse {
 
 struct NotificationsKey {
     static let NotificationsMenuKey = "notificationKeyForMenu"
+    static let NotificationsProductDetailKey = "notificationKeyForProductDetail"
 }
