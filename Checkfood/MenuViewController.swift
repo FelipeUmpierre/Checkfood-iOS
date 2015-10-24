@@ -13,7 +13,7 @@ import SwiftyJSON
 class MenuViewController: UITableViewController, NetworkingControllerDelegate {
 
     var products: [Product] = []
-    var networkingController = NetworkingController()
+    let networkingController = NetworkingController()
     
     // MARK: - View Controller Lifecycle
     
