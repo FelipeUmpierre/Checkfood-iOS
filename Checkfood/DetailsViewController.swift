@@ -23,43 +23,22 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        Alamofire.request(.GET, getFullProductDetailUrl()).responseJSON { request in
-            if let json = request.result.value {
-                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
-                    let data = JSON(json)
-                    var ingredients: [Ingredient] = []
-                    
-                    for (_, ingredient): (String, JSON) in data["ingredients"] {
-                        ingredients += [Ingredient.init(id: ingredient["id"].int!, name: ingredient["name"].string!)]
-                    }
-                    
-                    dispatch_async(dispatch_get_main_queue()) {
-                        self.product?.ingredients = ingredients
-                        self.loadViewComponents()
-                    }
-                }
-            }
-        }
+        
+        self.loadComponents()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    private func getFullProductDetailUrl() -> String {
-        return  "\(Urls.productDetail)/\(self.product!.id)"
-    }
-    
     // MARK: - Load Components
     
-    private func loadViewComponents() {
+    func loadComponents() {
         productNameLabel.text = self.product!.name
-        productPriceLabel.text = "\(self.product!.price)"
+        productPriceLabel.text = "\(self.product!.price)".twoFractionDigits
         productIngredientsLabel.text = self.product!.ingredientList()
         productDescriptionTextView.text = self.product!.description
     }
-
     
     // MARK: - Navigation
 
