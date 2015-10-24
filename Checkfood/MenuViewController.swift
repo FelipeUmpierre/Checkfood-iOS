@@ -10,25 +10,36 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class MenuViewControlvar: UITableViewController {
+class MenuViewController: UITableViewController, NetworkingControllerDelegate {
 
     var products: [Product] = []
-    let menu: Menu = Menu()
+    var networkingController = NetworkingController()
     
-    // MARK: View Controller Lifecycle
+    // MARK: - View Controller Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        LoadingOverlay.shared.showOverlay(self.navigationController?.view)
+        networkingController.delegate = self
+        networkingController.makeRequestToApi(networkingController.createProductObject, url: Urls.menu)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadTableViewData", name: NotificationsKey.NotificationsMenuKey, object: nil)
+        LoadingOverlay.shared.showOverlay(self.navigationController?.view)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
+    // MARK: - NetworkingControllerDelegate
+    
+    func networkingDidUpdate<T>(object: [T]) {
+        self.products = object as Any as! [Product]
+        self.tableView.reloadData()
+            
+        LoadingOverlay.shared.hideOverlayView()
+    }
+    
+    
     // MARK: - UITableViewDataSource
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -47,15 +58,6 @@ class MenuViewControlvar: UITableViewController {
         cell.detailTextLabel?.text = product.description
         
         return cell
-    }
-    
-    // MARK: - Reload Table View
-    
-    func reloadTableViewData() {
-        self.products = menu.getProducts()!
-        self.tableView.reloadData()
-        
-        LoadingOverlay.shared.hideOverlayView()
     }
     
     // MARK: - Navigation
