@@ -130,21 +130,24 @@
                                     <constraint firstAttribute="height" constant="297" id="M36-QZ-Kdm"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Produto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8B-EE-78x">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8B-EE-78x">
                                 <rect key="frame" x="20" y="369" width="468" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredientes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAY-EE-rOU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAY-EE-rOU">
                                 <rect key="frame" x="20" y="398" width="560" height="12"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="12" id="qbY-UB-dYO"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" red="0.43244846204188481" green="0.43244846204188481" blue="0.43244846204188481" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preço" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPk-be-27u">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPk-be-27u">
                                 <rect key="frame" x="496" y="369" width="85" height="21"/>
                                 <animations/>
                                 <constraints>
@@ -155,7 +158,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" editable="NO" text="Descrição" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3z-qi-7i1">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3z-qi-7i1">
                                 <rect key="frame" x="20" y="418" width="560" height="174"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -165,22 +168,22 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="q3z-qi-7i1" firstAttribute="top" secondItem="gAY-EE-rOU" secondAttribute="bottom" constant="8" symbolic="YES" id="1bZ-Uz-Z4k"/>
                             <constraint firstItem="OPk-be-27u" firstAttribute="leading" secondItem="A8B-EE-78x" secondAttribute="trailing" constant="8" id="4qU-Ic-I6M"/>
                             <constraint firstAttribute="trailingMargin" secondItem="q3z-qi-7i1" secondAttribute="trailing" id="8ke-0H-VxF"/>
                             <constraint firstAttribute="leadingMargin" secondItem="q3z-qi-7i1" secondAttribute="leading" id="Aak-1w-mCF"/>
                             <constraint firstItem="Wc8-jg-pXk" firstAttribute="top" secondItem="GzS-97-sGp" secondAttribute="bottom" id="BhV-7r-jkI"/>
-                            <constraint firstItem="gAY-EE-rOU" firstAttribute="leading" secondItem="A8B-EE-78x" secondAttribute="leading" id="Bsf-c3-FcA"/>
                             <constraint firstItem="OPk-be-27u" firstAttribute="baseline" secondItem="A8B-EE-78x" secondAttribute="baseline" id="E6D-Rj-d2b"/>
                             <constraint firstAttribute="trailing" secondItem="Wc8-jg-pXk" secondAttribute="trailing" id="FnK-LC-aiX"/>
                             <constraint firstItem="OPk-be-27u" firstAttribute="firstBaseline" secondItem="A8B-EE-78x" secondAttribute="firstBaseline" id="GtG-RM-Bb0"/>
-                            <constraint firstItem="gAY-EE-rOU" firstAttribute="centerX" secondItem="Wc8-jg-pXk" secondAttribute="centerX" id="KUS-uP-J47"/>
-                            <constraint firstItem="q3z-qi-7i1" firstAttribute="top" secondItem="gAY-EE-rOU" secondAttribute="bottom" constant="8" symbolic="YES" id="PXh-Pe-deb"/>
+                            <constraint firstItem="gAY-EE-rOU" firstAttribute="leading" secondItem="A8B-EE-78x" secondAttribute="leading" id="H7S-pW-ah7"/>
+                            <constraint firstItem="gAY-EE-rOU" firstAttribute="trailing" secondItem="q3z-qi-7i1" secondAttribute="trailing" id="QEc-VO-bgl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OPk-be-27u" secondAttribute="trailing" constant="-1" id="RwR-Q0-4Yt"/>
-                            <constraint firstItem="gAY-EE-rOU" firstAttribute="top" secondItem="A8B-EE-78x" secondAttribute="bottom" constant="8" symbolic="YES" id="Spr-6Z-cdr"/>
                             <constraint firstItem="5Dt-n4-hg7" firstAttribute="top" secondItem="q3z-qi-7i1" secondAttribute="bottom" constant="8" symbolic="YES" id="Sun-Pl-vc8"/>
                             <constraint firstAttribute="leadingMargin" secondItem="A8B-EE-78x" secondAttribute="leading" id="Xpm-pM-a96"/>
                             <constraint firstItem="Wc8-jg-pXk" firstAttribute="leading" secondItem="A2J-Sr-5UA" secondAttribute="leading" id="dxs-R2-Wut"/>
                             <constraint firstItem="A8B-EE-78x" firstAttribute="top" secondItem="Wc8-jg-pXk" secondAttribute="bottom" constant="8" id="nPK-xB-Mpk"/>
+                            <constraint firstItem="gAY-EE-rOU" firstAttribute="top" secondItem="A8B-EE-78x" secondAttribute="bottom" constant="8" symbolic="YES" id="p6x-Ge-aJT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Descrição do produto" id="Ywa-dz-w4C">
