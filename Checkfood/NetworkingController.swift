@@ -30,11 +30,14 @@ class NetworkingController {
     
     func createProductObject(data: JSON) -> [Product] {
         var products: [Product] = []
-        
+
         for (_, subJson): (String, JSON) in data {
-            products += [Product(id: subJson["id"].int!, name: subJson["name"].string!, description: subJson["description"].string!, price: subJson["price"].doubleValue)]
+            let product: Product = Product(id: subJson["id"].int!, name: subJson["name"].string!, description: subJson["description"].string!, price: subJson["price"].doubleValue)
+            product.ingredients = createIngredientsObject(subJson)
+
+            products += [product]
         }
-        
+
         return products
     }
     
