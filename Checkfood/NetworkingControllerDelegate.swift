@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+protocol NetworkingControllerDelegate: class {
+    func networkingDidUpdate<T>(object: [T])
+}
