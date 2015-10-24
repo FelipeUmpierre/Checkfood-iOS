@@ -11,3 +11,7 @@ import Foundation
 protocol NetworkingControllerDelegate: class {
     func networkingDidUpdate<T>(object: [T])
 }
+
+extension NetworkingControllerDelegate {
+    func networkingDidUpdate<T>(object: T) {}
+}
