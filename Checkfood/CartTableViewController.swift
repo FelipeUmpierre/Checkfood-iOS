@@ -9,13 +9,13 @@
 import UIKit
 
 class CartTableViewController: UITableViewController {
-
-    var products: [Product?] = []
+    
+    var products: [Product] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print(self.products)
+        
+        print(NSUserDefaults.standardUserDefaults().stringArrayForKey(NSUserDefaultsKey.NSUserDefaultsKeyForCart))
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -44,9 +44,9 @@ class CartTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(CellReuse.CellReuseCartIdentifier, forIndexPath: indexPath)
         let product = self.products[indexPath.row]
-        print(product!.quantity)
-        cell.textLabel?.text = product!.name
-        cell.detailTextLabel?.text = product!.description
+
+        cell.textLabel?.text = product.name
+        cell.detailTextLabel?.text = product.description
         
         return cell
     }
