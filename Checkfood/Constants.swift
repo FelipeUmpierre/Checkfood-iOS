@@ -29,3 +29,7 @@ struct NotificationsKey {
     static let NotificationsMenuKey = "notificationKeyForMenu"
     static let NotificationsProductDetailKey = "notificationKeyForProductDetail"
 }
+
+struct NSUserDefaultsKey {
+    static let NSUserDefaultsKeyForCart = "NSUserDefaultsKeyCart"
+}
