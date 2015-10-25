@@ -34,15 +34,32 @@ class ObservationViewController: UIViewController {
         self.quantityTextField.text = Int(sender.value).description
     }
     
+    @IBAction func addProductToCartButton(sender: AnyObject) {
+        self.product!.quantity = Int(quantityTextField.text!)
+        self.product!.observation = observationTextView.text
+        
+        // let defaults = NSUserDefaults.standardUserDefaults()
+        // defaults.setObject(self.product! as AnyObject, forKey: NSUserDefaultsKey.NSUserDefaultsKeyForCart)
+        // defaults.synchronize()
+        
+        // print(defaults.objectForKey(NSUserDefaultsKey.NSUserDefaultsKeyForCart))
+        
+    }
+    
     // MARK: - Navigation
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == Segues.CartProductSegue {
-            if let destination = segue.destinationViewController as? CartTableViewController {
+            if let _ = segue.destinationViewController as? CartTableViewController {
                 self.product!.quantity = Int(quantityTextField.text!)
                 self.product!.observation = observationTextView.text
                 
-                destination.products += [self.product]
+                // 
+                let defaults = NSUserDefaults.standardUserDefaults()
+                defaults.setObject(self.product!, forKey: NSUserDefaultsKey.NSUserDefaultsKeyForCart)
+                defaults.synchronize()
+                
+                print(defaults.objectForKey(NSUserDefaultsKey.NSUserDefaultsKeyForCart))
             }
         }
         
