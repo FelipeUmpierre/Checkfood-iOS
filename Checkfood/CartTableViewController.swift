@@ -10,12 +10,12 @@ import UIKit
 
 class CartTableViewController: UITableViewController {
     
-    var products: [Product] = []
+    var products: [Product]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.products = loadProductToCart()!
+        self.products = loadProductToCart()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -40,13 +40,13 @@ class CartTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.products.count
+        return self.products!.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(CellReuse.CellReuseCartIdentifier, forIndexPath: indexPath)
-        let product = self.products[indexPath.row]
+        let product = self.products![indexPath.row]
 
         cell.textLabel?.text = product.name
         cell.detailTextLabel?.text = product.descriptive
@@ -55,7 +55,7 @@ class CartTableViewController: UITableViewController {
     }
     
     @IBAction func cleanListOfProducts(sender: AnyObject) {
-        Product.ArchiveURL.removeAllCachedResourceValues()
+
     }
     
     // MARK: - NSCoding Load Product
@@ -64,15 +64,12 @@ class CartTableViewController: UITableViewController {
         return NSKeyedUnarchiver.unarchiveObjectWithFile(Product.ArchiveURL.path!) as? [Product]
     }
     
-    /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
 
-    /*
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
@@ -82,7 +79,6 @@ class CartTableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
 
     /*
     // Override to support rearranging the table view.
