@@ -14,6 +14,8 @@ class DetailsViewController: UIViewController {
 
     var product: Product?
     
+    // MARK: - Outlets
+    
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var productPriceLabel: UILabel!
     @IBOutlet weak var productIngredientsLabel: UILabel!
@@ -37,7 +39,7 @@ class DetailsViewController: UIViewController {
         productNameLabel.text = self.product!.name
         productPriceLabel.text = "\(self.product!.price)".twoFractionDigits
         productIngredientsLabel.text = self.product!.ingredientList()
-        productDescriptionTextView.text = self.product!.description
+        productDescriptionTextView.text = self.product!.descriptive
     }
     
     // MARK: - Navigation
