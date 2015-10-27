@@ -15,7 +15,7 @@ class CartTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(NSUserDefaults.standardUserDefaults().stringArrayForKey(NSUserDefaultsKey.NSUserDefaultsKeyForCart))
+        self.products = loadProductToCart()!
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -28,11 +28,14 @@ class CartTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.tableView.reloadData()
+    }
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
@@ -46,11 +49,21 @@ class CartTableViewController: UITableViewController {
         let product = self.products[indexPath.row]
 
         cell.textLabel?.text = product.name
-        cell.detailTextLabel?.text = product.description
+        cell.detailTextLabel?.text = product.descriptive
         
         return cell
     }
+    
+    @IBAction func cleanListOfProducts(sender: AnyObject) {
+        Product.ArchiveURL.removeAllCachedResourceValues()
+    }
+    
+    // MARK: - NSCoding Load Product
 
+    func loadProductToCart() -> [Product]? {
+        return NSKeyedUnarchiver.unarchiveObjectWithFile(Product.ArchiveURL.path!) as? [Product]
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
