@@ -44,25 +44,16 @@ class ObservationViewController: UIViewController {
         self.product!.quantity = Int(quantityTextField.text!)
         self.product!.observation = observationTextView.text
         
-        saveProductToCart()
+        let dataFile = DataFile()
+        dataFile.saveToFile([self.product!], key: NSUserDefaultsKey.NSUserDefaultsKeyForCart)
     }
     
-    func saveProductToCart() {
-        var load: [Product] = [self.product!]
+    func saveThisProductToListForOrder() {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let encodeProduct = NSKeyedArchiver.archivedDataWithRootObject([self.product!])
         
-        if let loadProducts = loadProductToCart() {
-            load += loadProducts
-        }
-
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(load, toFile: Product.ArchiveURL.path!)
-        
-        if !isSuccessfulSave {
-            print("Failed to save meals...")
-        }
-    }
-    
-    func loadProductToCart() -> [Product]? {
-        return NSKeyedUnarchiver.unarchiveObjectWithFile(Product.ArchiveURL.path!) as? [Product]
+        userDefaults.setObject(encodeProduct, forKey: NSUserDefaultsKey.NSUserDefaultsKeyForCart)
+        userDefaults.synchronize()
     }
     
     // MARK: - Navigation

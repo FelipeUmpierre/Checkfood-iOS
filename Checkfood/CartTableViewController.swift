@@ -15,7 +15,7 @@ class CartTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.products = loadProductToCart()
+        loadProductsToListOrder()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -42,7 +42,6 @@ class CartTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.products!.count
     }
-
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(CellReuse.CellReuseCartIdentifier, forIndexPath: indexPath)
@@ -58,11 +57,10 @@ class CartTableViewController: UITableViewController {
 
     }
     
-    // MARK: - NSCoding Load Product
-
-    func loadProductToCart() -> [Product]? {
-        return NSKeyedUnarchiver.unarchiveObjectWithFile(Product.ArchiveURL.path!) as? [Product]
+    func loadProductsToListOrder() {
+        self.products = DataFile().loadFromFile(NSUserDefaultsKey.NSUserDefaultsKeyForCart)
     }
+    
     
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
