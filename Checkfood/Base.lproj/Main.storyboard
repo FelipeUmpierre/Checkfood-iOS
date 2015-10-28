@@ -137,7 +137,7 @@
                     <navigationItem key="navigationItem" title="Pedido aberto" id="0ta-Db-8wo">
                         <barButtonItem key="leftBarButtonItem" title="Limpar Pedidos" id="3rb-rg-ff3">
                             <connections>
-                                <action selector="cleanListOfProducts:" destination="h3B-KY-wZu" id="5Ys-AE-lOf"/>
+                                <action selector="cleanListOfProducts:" destination="h3B-KY-wZu" id="p7p-4W-L0x"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Pedir" id="Tcl-99-nrX"/>
@@ -363,11 +363,13 @@
             </objects>
             <point key="canvasLocation" x="184" y="1967"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Menu-->
         <scene sceneID="VB6-80-2La">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bt9-OU-X03" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="more" id="gCk-Af-bza"/>
+                    <tabBarItem key="tabBarItem" title="Menu" image="Meal-25" selectedImage="Meal-25" id="gCk-Af-bza">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-2"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="i7N-8U-8fs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -383,11 +385,13 @@
             </objects>
             <point key="canvasLocation" x="1374" y="1180"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Pedido-->
         <scene sceneID="Xeu-WX-FT7">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lxi-FQ-XZd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="Xco-db-AuA"/>
+                    <tabBarItem key="tabBarItem" title="Pedido" image="Cook-26" selectedImage="Cook-26" id="Xco-db-AuA">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-2"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aTm-Tj-o6s">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -406,5 +410,7 @@
     </scenes>
     <resources>
         <image name="12-Great-Dishes-for-a-Steamy-and-Delicious-Date-1" width="725" height="483"/>
+        <image name="Cook-26" width="26" height="26"/>
+        <image name="Meal-25" width="25" height="25"/>
     </resources>
 </document>
