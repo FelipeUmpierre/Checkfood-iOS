@@ -44,8 +44,9 @@ class ObservationViewController: UIViewController {
         self.product!.quantity = Int(quantityTextField.text!)
         self.product!.observation = observationTextView.text
         
-        let dataFile = DataFile()
-        dataFile.saveToFile([self.product!], key: NSUserDefaultsKey.NSUserDefaultsKeyForCart)
+        let configurations = Configurations();
+        configurations.createTable("product")
+        configurations.insert(ProductDatabase.insertProduct(self.product!))
     }
     
     func saveThisProductToListForOrder() {
