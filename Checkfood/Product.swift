@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Product: NSObject, NSCoding {
+class Product {
     
     // MARK: - Property
     
@@ -28,14 +28,7 @@ class Product: NSObject, NSCoding {
         self.name = name
         self.descriptive = description
         self.price = price
-        
-        super.init()
     }
-    
-    // MARK: Archiving Paths
-    
-    static let DocumentsDirectory = NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
-    static let ArchiveURL = DocumentsDirectory.URLByAppendingPathComponent(NSArchiverPath.archiverProducts)
     
     // MARK: - Converting Array to String
     
@@ -47,38 +40,5 @@ class Product: NSObject, NSCoding {
         }
         
         return arrayOfIngredients.joinWithSeparator(", ")
-    }
-    
-    // MARK: - NSCoding
-    
-    required convenience init?(coder aDecoder: NSCoder) {
-        let id = aDecoder.decodeObjectForKey("id") as! Int
-        let name = aDecoder.decodeObjectForKey("name") as! String
-        let descriptive = aDecoder.decodeObjectForKey("descriptive") as! String
-        let price = aDecoder.decodeObjectForKey("price") as! Double
-        
-        self.init(id: id, name: name, description: descriptive, price: price)
-        
-        if let ingredients = aDecoder.decodeObjectForKey("ingredients") as? [Ingredient] {
-            self.ingredients = ingredients
-        }
-        
-        if let quantity = aDecoder.decodeObjectForKey("quantity") as? Int {
-            self.quantity = quantity
-        }
-
-        if let observation = aDecoder.decodeObjectForKey("observation") as? String {
-            self.observation = observation
-        }
-    }
-    
-    func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(self.id, forKey: "id")
-        aCoder.encodeObject(self.name, forKey: "name")
-        aCoder.encodeObject(self.descriptive, forKey: "descriptive")
-        aCoder.encodeObject(self.price, forKey: "price")
-        aCoder.encodeObject(self.ingredients, forKey: "ingredients")
-        aCoder.encodeObject(self.quantity, forKey: "quantity")
-        aCoder.encodeObject(self.observation, forKey: "observation")
     }
 }
