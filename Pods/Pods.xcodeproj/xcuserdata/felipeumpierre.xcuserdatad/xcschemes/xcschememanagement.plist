@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SQLite.swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,12 +32,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8FAAF7F9E0E9B401CF3B02F31944C51E</key>
+		<key>55DFFE2E28BB3783623796598E9A7623</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E9DBDCBEF59CEB4D1FFEF5EE8C887E30</key>
+		<key>743B1F42449820E885919D22B54023A8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B0A52C2464C46B9DFD019F74140E65EE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
