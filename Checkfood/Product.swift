@@ -9,21 +9,28 @@
 import Foundation
 
 class Product {
+    
+    // MARK: - Property
+    
     var id: Int
     var name: String
-    var description: String
+    var descriptive: String
     var price: Double
     
     var ingredients: [Ingredient]?
     var quantity: Int?
     var observation: String?
     
+    // MARK: - init
+    
     init(id: Int, name: String, description: String, price: Double) {
         self.id = id
         self.name = name
-        self.description = description
+        self.descriptive = description
         self.price = price
     }
+    
+    // MARK: - Converting Array to String
     
     func ingredientList() -> String {
         var arrayOfIngredients: [String] = [String]()

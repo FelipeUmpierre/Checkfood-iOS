@@ -33,3 +33,7 @@ struct NotificationsKey {
 struct NSUserDefaultsKey {
     static let NSUserDefaultsKeyForCart = "NSUserDefaultsKeyCart"
 }
+
+struct NSArchiverPath {
+    static let archiverProducts = "archiverProducts"
+}

@@ -54,8 +54,17 @@ class MenuViewController: UITableViewController, NetworkingControllerDelegate {
         let cell = tableView.dequeueReusableCellWithIdentifier(CellReuse.CellReuseProductIdentifier, forIndexPath: indexPath)
         let product = self.products[indexPath.row]
         
-        cell.textLabel?.text = product.name
-        cell.detailTextLabel?.text = product.description
+        if let productTitleName = cell.viewWithTag(1) as? UILabel {
+            productTitleName.text = product.name
+        }
+        
+        if let productSubtitleDescriptive = cell.viewWithTag(2) as? UILabel {
+            productSubtitleDescriptive.text = product.descriptive
+        }
+        
+        if let productPrice = cell.viewWithTag(3) as? UILabel {
+            productPrice.text = "\(product.price)".twoFractionDigits
+        }
         
         return cell
     }

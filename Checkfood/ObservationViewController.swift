@@ -12,8 +12,12 @@ class ObservationViewController: UIViewController {
     
     var product: Product?
 
+    // MARK: - Outlets
+    
     @IBOutlet weak var quantityTextField: UITextField!
     @IBOutlet weak var observationTextView: UITextView!
+    
+    // MARK: - View Controller Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +34,8 @@ class ObservationViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    // MARK: - Actions
+    
     @IBAction func stepperUpdateTextField(sender: UIStepper) {
         self.quantityTextField.text = Int(sender.value).description
     }
@@ -38,12 +44,17 @@ class ObservationViewController: UIViewController {
         self.product!.quantity = Int(quantityTextField.text!)
         self.product!.observation = observationTextView.text
         
-        // let defaults = NSUserDefaults.standardUserDefaults()
-        // defaults.setObject(self.product! as AnyObject, forKey: NSUserDefaultsKey.NSUserDefaultsKeyForCart)
-        // defaults.synchronize()
+        let configurations = Configurations();
+        configurations.createTable("product")
+        configurations.insert(ProductDatabase.insertProduct(self.product!))
+    }
+    
+    func saveThisProductToListForOrder() {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let encodeProduct = NSKeyedArchiver.archivedDataWithRootObject([self.product!])
         
-        // print(defaults.objectForKey(NSUserDefaultsKey.NSUserDefaultsKeyForCart))
-        
+        userDefaults.setObject(encodeProduct, forKey: NSUserDefaultsKey.NSUserDefaultsKeyForCart)
+        userDefaults.synchronize()
     }
     
     // MARK: - Navigation
@@ -53,13 +64,6 @@ class ObservationViewController: UIViewController {
             if let _ = segue.destinationViewController as? CartTableViewController {
                 self.product!.quantity = Int(quantityTextField.text!)
                 self.product!.observation = observationTextView.text
-                
-                // 
-                let defaults = NSUserDefaults.standardUserDefaults()
-                defaults.setObject(self.product!, forKey: NSUserDefaultsKey.NSUserDefaultsKeyForCart)
-                defaults.synchronize()
-                
-                print(defaults.objectForKey(NSUserDefaultsKey.NSUserDefaultsKeyForCart))
             }
         }
         
