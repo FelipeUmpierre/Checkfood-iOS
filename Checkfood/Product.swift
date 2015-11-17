@@ -23,11 +23,14 @@ class Product {
     
     // MARK: - init
     
-    init(id: Int, name: String, description: String, price: Double) {
+    init(id: Int, name: String, description: String, price: Double, ingredients: [Ingredient]? = [], quantity: Int? = 1, observation: String? = "") {
         self.id = id
         self.name = name
         self.descriptive = description
         self.price = price
+        self.ingredients = ingredients
+        self.quantity = quantity
+        self.observation = observation
     }
     
     // MARK: - Converting Array to String
