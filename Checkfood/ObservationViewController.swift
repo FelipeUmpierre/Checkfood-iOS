@@ -46,15 +46,15 @@ class ObservationViewController: UIViewController {
         
         let configurations = Configurations();
         configurations.createTable("product")
-        configurations.insert(ProductDatabase.insertProduct(self.product!))
-    }
-    
-    func saveThisProductToListForOrder() {
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        let encodeProduct = NSKeyedArchiver.archivedDataWithRootObject([self.product!])
         
-        userDefaults.setObject(encodeProduct, forKey: NSUserDefaultsKey.NSUserDefaultsKeyForCart)
-        userDefaults.synchronize()
+        if let thisProduct: Product = ProductDatabase.createProductRow(configurations.findOne(ProductDatabase.findOne(self.product!))) {
+            let quantity = thisProduct.quantity! + self.product!.quantity!
+            self.product!.quantity = quantity
+            
+            configurations.update(ProductDatabase.updateProduct(self.product!))
+        } else {
+            configurations.insert(ProductDatabase.insertProduct(self.product!))
+        }
     }
     
     // MARK: - Navigation
