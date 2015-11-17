@@ -32,8 +32,7 @@ class NetworkingController {
         var products: [Product] = []
 
         for (_, subJson): (String, JSON) in data {
-            let product: Product = Product(id: subJson["id"].int!, name: subJson["name"].string!, description: subJson["description"].string!, price: subJson["price"].doubleValue)
-            product.ingredients = createIngredientsObject(subJson)
+            let product: Product = Product(id: subJson["id"].int!, name: subJson["name"].string!, description: subJson["description"].string!, price: subJson["price"].doubleValue, ingredients: createIngredientsObject(subJson))
 
             products += [product]
         }
