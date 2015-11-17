@@ -50,7 +50,7 @@ class ObservationViewController: UIViewController {
         if let thisProduct: Product = ProductDatabase.createProductRow(configurations.findOne(ProductDatabase.findOne(self.product!))) {
             let quantity = thisProduct.quantity! + self.product!.quantity!
             self.product!.quantity = quantity
-            
+
             configurations.update(ProductDatabase.updateProduct(self.product!))
         } else {
             configurations.insert(ProductDatabase.insertProduct(self.product!))
