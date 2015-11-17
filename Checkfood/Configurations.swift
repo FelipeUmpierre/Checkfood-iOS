@@ -37,15 +37,27 @@ class Configurations {
         try! self.db!.run(object.delete())
     }
     
+    func findOne(object: SQLite.QueryType) -> Row? {
+        for result in self.db!.prepare(object) {
+            return result
+        }
+        
+        return nil
+    }
+    
     // MARK: - Creating table
     
     func createTable(table: String) {
+        //try! self.db!.run(Table(table).drop(ifExists: true))
+        
         try! self.db!.run(Table(table).create(ifNotExists: true) { t in
             t.column(ProductTableField.productId, primaryKey: true)
             t.column(ProductTableField.id)
             t.column(ProductTableField.name)
             t.column(ProductTableField.descriptive)
             t.column(ProductTableField.price)
+            t.column(ProductTableField.quantity)
+            t.column(ProductTableField.observation)
         })
     }
 }
