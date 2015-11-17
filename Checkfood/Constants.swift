@@ -9,7 +9,7 @@
 import Foundation
 
 struct Urls {
-    static let main = "http://wb-checkfood.rhcloud.com/api"
+    static let main = "http://api-checkfood.rhcloud.com/api"
     static let menu = Urls.main + "/menu"
     static let productDetail = Urls.main + "/product"
 }
