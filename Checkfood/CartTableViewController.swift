@@ -57,6 +57,7 @@ class CartTableViewController: UITableViewController {
         }
         
         if let productPrice = cell.viewWithTag(3) as? UILabel {
+            print(product.quantity!)
             let totalPrice = product.price * Double(product.quantity!)
             
             productPrice.text = "\(totalPrice)".twoFractionDigits
@@ -77,7 +78,7 @@ class CartTableViewController: UITableViewController {
     
     func loadProductsToListOrder() {
         self.products = ProductDatabase.listProduct(self.configurations.db!)
-        
+
         self.tableView.reloadData()
     }
     
