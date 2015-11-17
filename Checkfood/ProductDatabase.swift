@@ -11,14 +11,29 @@ import SQLite
 
 struct ProductDatabase {
     static func insertProduct(product: Product) -> SQLite.Insert {
-        return Table("product").insert(ProductTableField.id <- Int64(product.id), ProductTableField.name <- product.name, ProductTableField.descriptive <- product.descriptive, ProductTableField.price <- product.price)
+        return Table("product").insert(
+            ProductTableField.id <- Int64(product.id),
+            ProductTableField.name <- product.name,
+            ProductTableField.descriptive <- product.descriptive,
+            ProductTableField.price <- product.price,
+            ProductTableField.quantity <- Int64(product.quantity!),
+            ProductTableField.observation <- product.observation!
+        )
     }
     
     static func updateProduct(product: Product) -> SQLite.Update {
-        return Table("product").update(ProductTableField.name <- product.name, ProductTableField.descriptive <- product.descriptive, ProductTableField.price <- product.price)
+        let productToUpdate = findOne(product)
+        
+        return productToUpdate.update(
+            ProductTableField.name <- product.name,
+            ProductTableField.descriptive <- product.descriptive,
+            ProductTableField.price <- product.price,
+            ProductTableField.quantity <- Int64(product.quantity!),
+            ProductTableField.observation <- product.observation!
+        )
     }
     
-    static func deleteProduct(product: Product) -> SQLite.QueryType {
+    static func findOne(product: Product) -> SQLite.QueryType {
         return Table("product").filter(ProductTableField.id == Int64(product.id))
     }
     
@@ -27,9 +42,33 @@ struct ProductDatabase {
         var productArray: [Product] = []
         
         for product in db.prepare(table) {
-            productArray += [Product(id: Int(product[ProductTableField.id]), name: product[ProductTableField.name], description: product[ProductTableField.descriptive], price: product[ProductTableField.price])]
+            productArray += [
+                Product(
+                    id: Int(product[ProductTableField.id]),
+                    name: product[ProductTableField.name],
+                    description: product[ProductTableField.descriptive],
+                    price: product[ProductTableField.price],
+                    quantity: Int(product[ProductTableField.quantity]),
+                    observation: product[ProductTableField.observation]
+                )
+            ]
         }
         
         return productArray
+    }
+    
+    static func createProductRow(tableRow: Row?) -> Product? {
+        if let row: Row = tableRow {
+            return Product(
+                id: Int(row[ProductTableField.id]),
+                name: row[ProductTableField.name],
+                description: row[ProductTableField.descriptive],
+                price: row[ProductTableField.price],
+                quantity: Int(row[ProductTableField.quantity]),
+                observation: row[ProductTableField.observation]
+            )
+        }
+        
+        return nil
     }
 }

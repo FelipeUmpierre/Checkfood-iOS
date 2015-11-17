@@ -48,7 +48,7 @@ class Configurations {
     // MARK: - Creating table
     
     func createTable(table: String) {
-        //try! self.db!.run(Table(table).drop(ifExists: true))
+        // try! self.db!.run(Table(table).drop(ifExists: true))
         
         try! self.db!.run(Table(table).create(ifNotExists: true) { t in
             t.column(ProductTableField.productId, primaryKey: true)
