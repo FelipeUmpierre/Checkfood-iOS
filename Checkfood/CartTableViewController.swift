@@ -57,7 +57,13 @@ class CartTableViewController: UITableViewController {
         }
         
         if let productPrice = cell.viewWithTag(3) as? UILabel {
-            productPrice.text = "\(product.price)".twoFractionDigits
+            let totalPrice = product.price * Double(product.quantity!)
+            
+            productPrice.text = "\(totalPrice)".twoFractionDigits
+        }
+        
+        if let productQuantity = cell.viewWithTag(4) as? UILabel {
+            productQuantity.text = "\(product.quantity!)x"
         }
         
         return cell
@@ -66,7 +72,7 @@ class CartTableViewController: UITableViewController {
     @IBAction func cleanListOfProducts(sender: AnyObject) {
         self.configurations.delete("product")
         
-        self.tableView.reloadData()
+        loadProductsToListOrder()
     }
     
     func loadProductsToListOrder() {
@@ -84,12 +90,9 @@ class CartTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            if let product: Product = self.products[indexPath.row] {
-                //self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-                self.configurations.delete(ProductDatabase.deleteProduct(product))
-            }
-            
-            loadProductsToListOrder()
+            self.configurations.delete(ProductDatabase.findOne(self.products[indexPath.row]))
+            self.products.removeAtIndex(indexPath.row)
+            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
