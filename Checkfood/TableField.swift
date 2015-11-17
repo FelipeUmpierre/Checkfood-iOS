@@ -15,4 +15,6 @@ struct ProductTableField {
     static let name = Expression<String>("name")
     static let descriptive = Expression<String>("descriptive")
     static let price = Expression<Double>("price")
+    static let quantity = Expression<Int64>("quantity")
+    static let observation = Expression<String>("observation")
 }
