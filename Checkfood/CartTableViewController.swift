@@ -52,12 +52,15 @@ class CartTableViewController: UITableViewController {
             productTitleName.text = product.name
         }
         
-        if let productSubtitleDescriptive = cell.viewWithTag(2) as? UILabel {
-            productSubtitleDescriptive.text = product.descriptive
-        }
+        /**
+         * removed the descriptive of the product in the cart
+         *
+         * if let productSubtitleDescriptive = cell.viewWithTag(2) as? UILabel {
+         *     productSubtitleDescriptive.text = product.descriptive
+         * }
+         */
         
         if let productPrice = cell.viewWithTag(3) as? UILabel {
-            print(product.quantity!)
             let totalPrice = product.price * Double(product.quantity!)
             
             productPrice.text = "\(totalPrice)".twoFractionDigits
@@ -80,6 +83,10 @@ class CartTableViewController: UITableViewController {
         self.products = ProductDatabase.listProduct(self.configurations.db!)
 
         self.tableView.reloadData()
+    }
+    
+    @IBAction func finishOrderRequest(sender: AnyObject) {
+        LoadingOverlay.shared.showOverlay(self.navigationController?.view)
     }
     
     // Override to support conditional editing of the table view.
