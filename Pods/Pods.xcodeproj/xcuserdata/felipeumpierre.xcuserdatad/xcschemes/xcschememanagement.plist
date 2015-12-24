@@ -2,6 +2,34 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>JLToast.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Checkfood.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SQLite.swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>432ECC54282C84882B482CCB4CF227FC</key>
@@ -9,27 +37,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>55DFFE2E28BB3783623796598E9A7623</key>
+		<key>595AEA0A78E6FBA34F9431EDC5D355B1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>743B1F42449820E885919D22B54023A8</key>
+		<key>892FE5BFDD0FD8B38E22D76135459FE4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8FAAF7F9E0E9B401CF3B02F31944C51E</key>
+		<key>D28BE9B2F9BB3528EA50FD274A7883DA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B0A52C2464C46B9DFD019F74140E65EE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E9DBDCBEF59CEB4D1FFEF5EE8C887E30</key>
+		<key>D2B09E778CE31B212ABE3A7357224098</key>
 		<dict>
 			<key>primary</key>
 			<true/>

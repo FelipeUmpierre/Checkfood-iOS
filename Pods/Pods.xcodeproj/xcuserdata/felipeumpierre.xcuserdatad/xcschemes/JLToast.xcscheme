@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'DD656254421A8A34E79D4765'
-               BlueprintName = 'SQLite.swift'
+               BlueprintIdentifier = 'BD3C8B97793D2B74A59C9D1A'
+               BlueprintName = 'JLToast'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SQLite.framework'>
+               BuildableName = 'JLToast.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
