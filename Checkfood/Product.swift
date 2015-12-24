@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Product {
+class Product: Serializable {
     
     // MARK: - Property
     
