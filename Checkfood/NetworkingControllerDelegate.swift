@@ -7,11 +7,14 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 protocol NetworkingControllerDelegate: class {
     func networkingDidUpdate<T>(object: [T])
+    func networkingMessageUpdate(object: JSON)
 }
 
 extension NetworkingControllerDelegate {
     func networkingDidUpdate<T>(object: T) {}
+    func networkingMessageUpdate(object: JSON) {}
 }
