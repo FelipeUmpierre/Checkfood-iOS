@@ -16,9 +16,20 @@ class CartTableViewController: UITableViewController, NetworkingControllerDelega
     let configurations = Configurations();
     let networkingController = NetworkingController()
     
+    // MARK: - View Controller Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadProductsToListOrder()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         loadProductsToListOrder()
     }
     
@@ -33,17 +44,6 @@ class CartTableViewController: UITableViewController, NetworkingControllerDelega
         }
         
         LoadingOverlay.shared.hideOverlayView()
-    }
-    
-    // MARK: - View Controller Lifecycle
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        loadProductsToListOrder()
     }
 
     // MARK: - Table view data source
@@ -85,10 +85,7 @@ class CartTableViewController: UITableViewController, NetworkingControllerDelega
         return cell
     }
     
-    @IBAction func cleanListOfProducts(sender: AnyObject) {
-        removeProductsFromList()
-        loadProductsToListOrder()
-    }
+    // MARK: - Product functions
     
     func loadProductsToListOrder() {
         self.products = ProductDatabase.listProduct(self.configurations.db!)
@@ -100,11 +97,22 @@ class CartTableViewController: UITableViewController, NetworkingControllerDelega
         self.configurations.delete("product")
     }
     
+    // MARK: - Actions
+    
+    @IBAction func cleanListOfProducts(sender: AnyObject) {
+        removeProductsFromList()
+        loadProductsToListOrder()
+    }
+    
     @IBAction func finishOrderRequest(sender: AnyObject) {
         LoadingOverlay.shared.showOverlay(self.navigationController?.view)
         
-        networkingController.delegate = self
-        networkingController.sendRequestToOrder(1, products: self.products)
+        if self.products.count > 0 {
+            networkingController.delegate = self
+            networkingController.sendRequestToOrder(1, products: self.products)
+        } else {
+            JLToast.makeText("No product to order.", duration: JLToastDelay.ShortDelay).show()
+        }
     }
     
     // Override to support conditional editing of the table view.
@@ -123,15 +131,4 @@ class CartTableViewController: UITableViewController, NetworkingControllerDelega
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
