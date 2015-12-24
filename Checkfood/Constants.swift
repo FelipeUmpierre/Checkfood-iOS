@@ -12,6 +12,7 @@ struct Urls {
     static let main = "http://api-checkfood.rhcloud.com/api"
     static let menu = Urls.main + "/menu"
     static let productDetail = Urls.main + "/product"
+    static let orderRequest = Urls.main + "/order/board/"
 }
 
 struct Segues {
