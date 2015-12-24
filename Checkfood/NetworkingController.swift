@@ -49,4 +49,26 @@ class NetworkingController {
         
         return ingredients
     }
+    
+    func sendRequestToOrder(board: Int, products: [Product]) {
+        // URLRequestConvertible
+        // http://cocoadocs.org/docsets/Alamofire/3.1.4/
+        
+        let URL = NSURL(string: Urls.orderRequest + String(board))!
+        
+        let mutableURLRequest = NSMutableURLRequest(URL: URL)
+        mutableURLRequest.HTTPMethod = "POST"
+        mutableURLRequest.HTTPBody = products.toJson()
+        mutableURLRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        Alamofire.request(mutableURLRequest).responseJSON { request in
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
+                let data = JSON(request.result.value!)
+                
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.delegate?.networkingMessageUpdate(data)
+                }
+            }
+        }
+    }
 }
