@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JLToast
 
 class ObservationViewController: UIViewController {
     
@@ -55,17 +56,9 @@ class ObservationViewController: UIViewController {
         } else {
             configurations.insert(ProductDatabase.insertProduct(self.product!))
         }
-    }
-    
-    // MARK: - Navigation
-
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == Segues.CartProductSegue {
-            if let _ = segue.destinationViewController as? CartTableViewController {
-                self.product!.quantity = Int(quantityTextField.text!)
-                self.product!.observation = observationTextView.text
-            }
-        }
         
+        JLToast.makeText("Product added with success!", duration: JLToastDelay.ShortDelay).show()
+        
+        navigationController?.popToRootViewControllerAnimated(true)
     }
 }
