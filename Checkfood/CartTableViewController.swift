@@ -7,23 +7,35 @@
 //
 
 import UIKit
+import SwiftyJSON
+import JLToast
 
-class CartTableViewController: UITableViewController {
+class CartTableViewController: UITableViewController, NetworkingControllerDelegate {
     
     var products: [Product] = []
-    let configurations: Configurations = Configurations();
+    let configurations = Configurations();
+    let networkingController = NetworkingController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadProductsToListOrder()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    // MARK: - NetworkingControllerDelegate
+    
+    func networkingMessageUpdate(object: JSON) {
+        if object["message"].isExists() {
+            JLToast.makeText(object["message"].string!, duration: JLToastDelay.ShortDelay).show()
+            
+            removeProductsFromList()
+            self.tabBarController?.selectedIndex = 0
+        }
+        
+        LoadingOverlay.shared.hideOverlayView()
+    }
+    
+    // MARK: - View Controller Lifecycle
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -74,8 +86,7 @@ class CartTableViewController: UITableViewController {
     }
     
     @IBAction func cleanListOfProducts(sender: AnyObject) {
-        self.configurations.delete("product")
-        
+        removeProductsFromList()
         loadProductsToListOrder()
     }
     
@@ -85,8 +96,15 @@ class CartTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
+    func removeProductsFromList() {
+        self.configurations.delete("product")
+    }
+    
     @IBAction func finishOrderRequest(sender: AnyObject) {
         LoadingOverlay.shared.showOverlay(self.navigationController?.view)
+        
+        networkingController.delegate = self
+        networkingController.sendRequestToOrder(1, products: self.products)
     }
     
     // Override to support conditional editing of the table view.
